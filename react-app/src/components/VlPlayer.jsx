@@ -23,14 +23,15 @@ const VlPlayer = () => {
       .init(playerConfig)
       .then(async (e) => {
         console.log("Player initialized successfully", e)
-        // Security Wall conditions
       })
       .catch(async (e) => {
         console.log("error", e)
-        setHardwallError(`Error: ${e?.msg}` || "An error occurred while initializing the player")
-        // const errorMsg = e || "TVE authorize error"
-        // const errorDetails = { errorCode: "TVE_PROVIDER_DISABLED", errorMessage: errorMsg }
-        // setError(errorDetails.errorMessage)
+        let errorMsg = e.msg || e?.response?.response?.data?.errorMessage || "An error occurred while initializing the player"
+        if(e?.response?.response?.data?.errorCode === "TVE_SUBSCRIPTION_NOT_FOUND") {
+          setIsAuthenticated(false)
+          errorMsg = "To view this content, please authenticate with your TV provider."
+        }
+        setHardwallError(errorMsg)
       })
       .finally(() => {
         setIsLoading(false)
