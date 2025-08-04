@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
 export const playerConfig = {
   videoId: "b536b3a7-134d-4af9-81aa-9b333743ec36",
   playerId: "my-player",
-  apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "https://spinco.staging.api.viewlift.com/v3",
+  apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "",
   token: Cookies.get('token') || '',
   skin: "VL_ONE",
   mute: true,
