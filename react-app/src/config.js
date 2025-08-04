@@ -1,18 +1,13 @@
-import Cookies from 'js-cookie';
 import { getMacros } from "./utils/macro";
-// import { setToken } from "../../helpers";
+import { setTveToken, getToken } from "./utils/helper";
 
-if (process.env.NODE_ENV !== 'production') {
-  if (!process.env.REACT_APP_X_API_KEY) console.warn('REACT_APP_X_API_KEY is not set');
-  if (!process.env.REACT_APP_SITE_NAME) console.warn('REACT_APP_SITE_NAME is not set');
-  if (!process.env.REACT_APP_API_BASE_URL) console.warn('REACT_APP_API_BASE_URL is not set');
-}
 
 export const playerConfig = {
-  videoId: "b536b3a7-134d-4af9-81aa-9b333743ec36",
+  videoId: "1dd3155a-ff6d-463e-9b75-d21225eb9150",       // TVE Plan
+  // videoId: "1269deb1-8f41-4ade-8af0-800e69728e2d",    // Free
   playerId: "my-player",
   apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "https://spinco.staging.api.viewlift.com/v3",
-  token: Cookies.get('token') || '',
+  token: getToken() || '',
   skin: "VL_ONE",
   mute: true,
   autoplay: true,
@@ -35,9 +30,7 @@ export const tveAuthConfig = {
   authSetting: {
     isTveAuth: true,
     isTveOnly: window?.app_data?.appcmsMain?.monetizationConfig?.tveLoginOnly || true,
-    tveSuccessRedirectCb: (tokenData) => {
-      setToken(tokenData)
-    }
+    tveSuccessRedirectCb: (tokenData) => setTveToken(tokenData),
   },
   styleInfo: {
     loginCtaBgColor: "#9f9a9a",
