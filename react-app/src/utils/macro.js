@@ -69,7 +69,7 @@ const macroMap = {
  * @param {Array<string>} requestedKeys - List of macro keys to fetch.
  * @returns {Object} Filtered macro map (empty object if no valid keys found).
  */
-const getMacros = (requestedKeys = []) => {
+export const getMacros = (requestedKeys = []) => {
   const filteredMacros = {}
   if (Array.isArray(requestedKeys) && requestedKeys.length > 0) {
     requestedKeys.forEach((key) => {

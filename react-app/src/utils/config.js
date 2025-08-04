@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import { getMacros } from "./macro";
 // import { setToken } from "../../helpers";
 
 if (process.env.NODE_ENV !== 'production') {
@@ -15,6 +16,9 @@ export const playerConfig = {
   skin: "VL_ONE",
   mute: true,
   autoplay: true,
+  customData: {
+    macros: getMacros(),
+  }
 };
 
 export const tveAuthConfig = {
