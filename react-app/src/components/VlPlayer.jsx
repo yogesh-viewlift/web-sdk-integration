@@ -25,13 +25,19 @@ const VlPlayer = () => {
         console.log("Player initialized successfully", e)
       })
       .catch(async (e) => {
-        console.log("error", e)
-        let errorMsg = e.msg || e?.response?.response?.data?.errorMessage || "An error occurred while initializing the player"
-        if(e?.response?.response?.data?.errorCode === "TVE_SUBSCRIPTION_NOT_FOUND") {
-          setIsAuthenticated(false)
-          errorMsg = "To view this content, please authenticate with your TV provider."
+        console.error("Player Initialization Error:", e);
+
+        const errData = e?.response?.response?.data || {};
+        const errCode = errData.errorCode;
+        let errorMsg = e?.msg || errData.errorMessage || "An error occurred while initializing the player.";
+
+        if (errCode === "TVE_SUBSCRIPTION_NOT_FOUND") {
+          errorMsg = "To view this content, please authenticate with your TV provider.";
+          setIsAuthenticated(false);
+        } else if (errCode === "VIDEO_NOT_EXISTS") {
+          errorMsg = "Sorry, the video you’re looking for is unavailable.";
         }
-        setHardwallError(errorMsg)
+        setHardwallError(errorMsg);
       })
       .finally(() => {
         setIsLoading(false)
