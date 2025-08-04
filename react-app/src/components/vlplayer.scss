@@ -1,0 +1,86 @@
+.vl-player-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.vl-player-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f1f1f1;
+  border-top: 4px solid #1474db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vl-player-error-message {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: rgba(185, 23, 23, 1);
+  background: rgba(253, 230, 230, 1);
+  border: 1px solid rgba(185, 23, 23, 1);
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  max-width: 338px; 
+  z-index: 10;
+}
+
+.vl-player-content {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+.vl-player-security-wall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.vl-player-security-wall-message {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+}
+
+.vl-player-tve-button {
+  margin: 0 auto;
+  text-align: left;
+  max-width: 900px;
+}
+
+.vl-player-loading-spinner {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666666;
+  padding: 20px;
+}
+
+.video-js {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
