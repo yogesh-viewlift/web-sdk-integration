@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
 export const playerConfig = {
   videoId: "b536b3a7-134d-4af9-81aa-9b333743ec36",
   playerId: "my-player",
-  apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "",
+  apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "https://spinco.staging.api.viewlift.com/v3",
   token: Cookies.get('token') || '',
   skin: "VL_ONE",
   mute: true,
@@ -23,10 +23,10 @@ export const playerConfig = {
 
 export const tveAuthConfig = {
   apiConfig: {
-    xApikey: (typeof process !== 'undefined' && process.env.REACT_APP_X_API_KEY) || "",
-    siteName: (typeof process !== 'undefined' && process.env.REACT_APP_SITE_NAME) || "",
-    domain: (typeof process !== 'undefined' && process.env.REACT_APP_DOMAIN) || "",
-    apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "",
+    xApikey: (typeof process !== 'undefined' && process.env.REACT_APP_X_API_KEY) || "BkSBbok02k6RYUlCLRzI23wac0euoSfC3FP7uW2S",
+    siteName: (typeof process !== 'undefined' && process.env.REACT_APP_SITE_NAME) || "spinco.staging.web.viewlift.com",
+    domain: (typeof process !== 'undefined' && process.env.REACT_APP_DOMAIN) || "spinco",
+    apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "https://spinco.staging.api.viewlift.com",
   },
   mediaInfo: {
     tveBannerUrl: "https://spinco.staging.asset.viewlift.com/images/2025/05/26/placeholder3x4-1748260656583.png?impolicy=resize&w=1920&h=1080",
