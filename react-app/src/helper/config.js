@@ -7,28 +7,15 @@ if (process.env.NODE_ENV !== 'production') {
   if (!process.env.REACT_APP_API_BASE_URL) console.warn('REACT_APP_API_BASE_URL is not set');
 }
 
-const playerConfig = {
-  videoId: "",
+export const playerConfig = {
+  videoId: "b536b3a7-134d-4af9-81aa-9b333743ec36",
   playerId: "my-player",
-  apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "",
+  apiBaseUrl: (typeof process !== 'undefined' && process.env.REACT_APP_API_BASE_URL) || "https://spinco.staging.api.viewlift.com/v3",
   token: Cookies.get('token') || '',
   skin: "VL_ONE",
   mute: true,
   autoplay: true,
 };
-
-export const getPlayerConfig = (videoId) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const paramVideoId = urlParams.get('videoID');
-  const finalVideoId = paramVideoId || videoId;
-
-  if (!finalVideoId) return playerConfig;
-
-  return {
-    ...playerConfig,
-    videoId: finalVideoId
-  }
-}
 
 export const tveAuthConfig = {
   apiConfig: {
@@ -49,11 +36,8 @@ export const tveAuthConfig = {
     }
   },
   styleInfo: {
-    loginCtaBgColor: "#1c1c1c",
-    loginCtaTextColor: "#ffffff",
-    loginCtaBgColor: "#cac3c3",
+    loginCtaBgColor: "#9f9a9a",
     loginCtaTextColor: "#0f0d0d",
-    loginCtaWidth: "100%",
     loginCtaBorderRadius: "4px",
   },
   debugConfig: {

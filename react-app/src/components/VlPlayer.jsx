@@ -4,20 +4,21 @@ import VLPlayerCore from "@viewlift/player/esm/index"
 import "@viewlift/player/esm/bundle.css"
 import VLAuthentication from "@viewlift/web-authentication"
 import "@viewlift/web-authentication/dist/assets/style.css"
-import { getPlayerConfig, tveAuthConfig } from "../helper/config"
+import { playerConfig, tveAuthConfig } from "../helper/config"
 import "./vlplayer.scss"
 
 const VlPlayer = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const [hardwallError, setHardwallError] = useState(null)
+  console.log("tveAuthConfig: ", tveAuthConfig)
 
   const { StandaloneAuthentication } = VLAuthentication()
 
   const initiateVideoPlayer = async () => {
     setIsLoading(true)
-    const playerConfig = getPlayerConfig(videoId)
+    console.log("playerConfig: ", playerConfig)
     VLPlayerCore()
       .init(playerConfig)
       .then(async (e) => {
