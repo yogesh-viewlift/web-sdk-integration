@@ -66,17 +66,16 @@ const VlPlayer = () => {
           <div className="vl-player-security-wall">
             <div className="vl-player-security-wall-message">
               <p>{hardwallError || "To view this content, please authenticate with your TV provider."}</p>
+
+              {!isAuthenticated && (
+                <div className="vl-player-tve-button">
+                  <StandaloneAuthentication config={tveAuthConfig} />
+                </div>
+              )}
             </div>
           </div>
         )}
       </div>
-
-      {/* Authentication Button */}
-      {!isAuthenticated && (
-        <div className="vl-player-tve-button">
-          <StandaloneAuthentication config={tveAuthConfig} />
-        </div>
-      )}
     </div>
   )
 }
