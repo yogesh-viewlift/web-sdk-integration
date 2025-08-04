@@ -73,7 +73,7 @@ const VlPlayer = () => {
         {(!isAuthenticated || hardwallError) && (
           <div className="vl-player-security-wall">
             <div className="vl-player-security-wall-message">
-              <p>{hardwallError || "To view this content, please authenticate with your TV provider."}</p>
+              <p className="msg">{hardwallError || "To view this content, please authenticate with your TV provider."}</p>
 
               {!isAuthenticated && (
                 <div className="vl-player-tve-button">
