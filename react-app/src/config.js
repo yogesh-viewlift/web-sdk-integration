@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import { getMacros } from "./macro";
+import { getMacros } from "./utils/macro";
 // import { setToken } from "../../helpers";
 
 if (process.env.NODE_ENV !== 'production') {

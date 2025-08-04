@@ -4,7 +4,7 @@ import VLPlayerCore from "@viewlift/player/esm/index"
 import "@viewlift/player/esm/bundle.css"
 import VLAuthentication from "@viewlift/web-authentication"
 import "@viewlift/web-authentication/dist/assets/style.css"
-import { playerConfig, tveAuthConfig } from "./utils/config"
+import { playerConfig, tveAuthConfig } from "./config"
 import "./styles/style.scss"
 
 const VlPlayer = () => {
