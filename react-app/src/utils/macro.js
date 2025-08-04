@@ -1,5 +1,5 @@
 // Default Macros Handled Internally by Video Player (Template)
-const playerDefaultMacroList = {
+const macroMap = {
   'VIEWLIFT_WIDTH': '', // Window width (to be set dynamically)
   'VIEWLIFT_HEIGHT': '', // Window height (to be set dynamically)
   'VIEWLIFT_SIZE': '', // Size in WxH format (computed later)
@@ -42,10 +42,6 @@ const playerDefaultMacroList = {
   'VIEWLIFT_CONTENT_TAGS': '', // Content tags/keywords
   'VIEWLIFT_GPP_SID': '', // GPP SID (Privacy)
   'VIEWLIFT_GPP': '', // GPP String (Privacy)
-}
-
-// Custom Macros from Other Sources (Dynamic/User-Specific)
-const customMacroList = {
   'VIEWLIFT_PROF': '', // Placeholder for profile ID
   'VIEWLIFT_CSID': '', // Placeholder for content session ID
   'VIEWLIFT_CAID': '', // Placeholder for campaign ID
@@ -56,12 +52,6 @@ const customMacroList = {
   'VIEWLIFT_USER_STATE': '', // User's state/region (Geo-detected)
   'VIEWLIFT_DEVICE_CATEGORY': '', // Device category (mobile/desktop)
   'VIEWLIFT_TVE_PROVIDER': '', // Hashed TVE provider string or 'none'
-}
-
-// Merge Default & Custom Macros into Single Map
-const macroMap = {
-  ...playerDefaultMacroList,
-  ...customMacroList,
 }
 
 /**

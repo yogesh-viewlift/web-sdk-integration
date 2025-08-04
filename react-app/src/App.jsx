@@ -46,7 +46,7 @@ const VlPlayer = () => {
 
   // Check authentication status on mount (post-redirect refresh)
   useEffect(() => {
-    const token = Cookies.get("token")
+    const token = Cookies.get("vlTveToken")
     if (token) {
       setIsAuthenticated(true)
     }
